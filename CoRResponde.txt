@@ -1,0 +1,142 @@
+
+Dim drawing
+Option Explicit
+
+Private lastX As Single
+Private lastY As Single
+
+Private Sub Form_Load()
+    Picture1.DrawWidth = 3
+    Label2.Caption = "20"
+End Sub
+
+Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 Then
+        Picture1.Line (lastX, lastY)-(X, Y), RGB(51, 51, 51)
+    End If
+    lastX = X
+    lastY = Y
+End Sub
+'-------------------------------------------------------------------------------------------------
+'-------------------------------------------------------------------------------------------------
+
+Private Sub comboio_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    comboio.Left = comboio.Left + (X - lx)
+    comboio.Top = comboio.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+
+Private Sub rudy_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    rudy.Left = rudy.Left + (X - lx)
+    rudy.Top = rudy.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+
+Private Sub lamb_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    lamb.Left = lamb.Left + (X - lx)
+    lamb.Top = lamb.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+
+Private Sub ruca_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    ruca.Left = ruca.Left + (X - lx)
+    ruca.Top = ruca.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+
+Private Sub ferrari_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    ferrari.Left = ferrari.Left + (X - lx)
+    ferrari.Top = ferrari.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+
+Private Sub papa_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    papa.Left = papa.Left + (X - lx)
+    papa.Top = papa.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+
+
+Private Sub monster_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Static lx As Single, ly As Single
+  If Button = vbLeftButton Then
+    monster.Left = monster.Left + (X - lx)
+    monster.Top = monster.Top + (Y - ly)
+  Else
+    lx = X: ly = Y
+  End If
+  
+End Sub
+Private Sub Command2_Click()
+ pic2.Visible = True
+ pic2.Picture = LoadPicture("F:\PC\Downloads\CoRRespondeFinal\CoRResponde\lol.jpg")
+ 
+ End Sub
+ 
+Private Sub pic2_Click()
+ pic2.Visible = False
+ 
+End Sub
+'----------------------------------------------------------------------------------------------------
+'----------------------------------------------------------------------------------------------------
+
+
+Private Sub Picture3_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    If Button = 1 Then
+        Picture3.DrawWidth = 3
+        Picture3.Line (X, Y)-(X, Y), RGB(51, 51, 51)
+    End If
+ Form2.Show
+ Timer2.Enabled = False
+
+End Sub
+
+Private Sub Command1_Click()
+ Picture1.Appearance = False
+ Picture3.Appearance = False
+End Sub
+'---------------------------------------------------------------------------------------------------
+'---------------------------------------------------------------------------------------------------
+
+Private Sub Timer1_Timer()
+  If Timer2.Enabled = True Then
+   Form3.Show
+  End If
+ Timer2.Enabled = False
+ 
+End Sub
+
+Private Sub Timer2_Timer()
+ Label2.Caption = Val(Label2.Caption) - 1
+End Sub
+
